@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Countries = ({countries}) => {
-    const {continents,flags, capital,name,currencies,population,coatOfArms
+    const {continents,flags, capital,name,currencies,population,coatOfArms,
 
 
     } = countries;
@@ -22,9 +22,7 @@ const Countries = ({countries}) => {
               <p>Population: {population}</p>
               </div>
               <div className="card-actions justify-between items-center">
-              <img className='h-16 w-16 rounded-xl' src={coatOfArms?.png} alt="Shoes" />
-                <div className="badge badge-outline">Fashion</div> 
-                <div className="badge badge-outline">Products</div>
+              <img className='h-16 w-16 rounded-xl' src={coatOfArms?.png} alt="No Image" />
               </div>
             </div>
           </div>
