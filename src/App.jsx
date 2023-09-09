@@ -1,19 +1,25 @@
 import { useState } from 'react'
 import './App.css'
-import { useEffect } from 'react';
+import { useEffect } from 'react'
+import Countries from './Countries'
 
 function App() {
-  const [country, setCountry] = useState()
-  useEffect(()=>{
+  const [countries, setCountries] = useState()
+  useEffect(() => {
     fetch('https://restcountries.com/v3.1/all')
     .then(res => res.json())
-    .then(data => setCountry(data))
+    .then(data => setCountries(data))
   },[])
 
   return (
     <>
       <div>
-        <h2 className='text-center font-bold text-3xl'>Countries {country.length}</h2>
+        <h1>Hello {countries.length}</h1>
+        <div>
+          {
+            countries.map(countries => <Countries countries={countries}></Countries>)
+          }
+        </div>
       </div>
     </>
   )
